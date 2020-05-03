@@ -8,7 +8,9 @@
   },
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "rbuild": "cargo watch -i .gitignore -i \"pkg/*\" -s \"wasm-pack build\"",
+    "dev": "concurrently --kill-others \"yarn start\" \"yarn --prefix .. rbuild \""
   },
   "repository": {
     "type": "git",
@@ -30,6 +32,7 @@
     "wasm-game-of-life": "../pkg"
   },
   "devDependencies": {
+    "concurrently": "^5.2.0",
     "copy-webpack-plugin": "^5.0.0",
     "hello-wasm-pack": "^0.1.0",
     "webpack": "^4.29.3",

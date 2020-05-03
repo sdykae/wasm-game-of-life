@@ -13,7 +13,7 @@ use wasm_bindgen::prelude::*;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cell {
     Dead = 1,
-    Alive = 0,
+    Alive = 2,
 }
 
 impl Cell {
